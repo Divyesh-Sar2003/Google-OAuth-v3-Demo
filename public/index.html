@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google OAuth v3 Demo - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-card">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fab fa-google"></i>
+                </div>
+                <h1>Google OAuth v3 Demo</h1>
+                <p>Experience the new Google OAuth v3 with automatic token refresh</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure OAuth v3 Authentication</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Automatic Token Refresh</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-circle"></i>
+                    <span>User Profile Management</span>
+                </div>
+            </div>
+
+            <div class="login-section">
+                <a href="/auth/google" class="google-login-btn">
+                    <i class="fab fa-google"></i>
+                    <span>Sign in with Google</span>
+                </a>
+                
+                <div class="info-text">
+                    <p><i class="fas fa-info-circle"></i> This demo uses Google OAuth v3 with offline access for refresh tokens</p>
+                </div>
+            </div>
+
+            <div class="setup-info">
+                <h3>Setup Instructions:</h3>
+                <ol>
+                    <li>Create a Google Cloud Project</li>
+                    <li>Enable Google+ API</li>
+                    <li>Configure OAuth consent screen</li>
+                    <li>Create OAuth 2.0 credentials</li>
+                    <li>Set redirect URI to: <code>http://localhost:3000/auth/google/callback</code></li>
+                    <li>Copy credentials to <code>.env</code> file</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

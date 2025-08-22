@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Google OAuth v3 Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <header class="dashboard-header">
+                <h1><i class="fab fa-google"></i> Google OAuth v3 Dashboard</h1>
+                <a href="/logout" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="profile-section">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="profile-info">
+                                <h2 id="userName">Loading...</h2>
+                                <p id="userEmail">Loading...</p>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <span class="label">User ID:</span>
+                                <span id="userId">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Locale:</span>
+                                <span id="userLocale">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Verified Email:</span>
+                                <span id="userVerified">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="token-section">
+                    <div class="token-card">
+                        <h3><i class="fas fa-key"></i> Token Information</h3>
+                        <div class="security-note">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Access tokens are masked for security. Copying is disabled.</span>
+                        </div>
+                        <div class="token-details">
+                            <div class="detail-item">
+                                <span class="label">Access Token:</span>
+                                <div class="token-display">
+                                    <span id="accessToken">Loading...</span>
+                                    <button class="copy-btn" onclick="copyToClipboard('accessToken')" title="Copying disabled for security">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Token Expires In:</span>
+                                <span id="tokenExpiresIn">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Scopes:</span>
+                                <span id="tokenScopes">Loading...</span>
+                            </div>
+                        </div>
+                        
+                        <div class="token-status">
+                            <div class="status-indicator" id="tokenStatus">
+                                <i class="fas fa-circle"></i>
+                                <span>Checking token status...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <div class="actions-card">
+                        <h3><i class="fas fa-cogs"></i> Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn primary" onclick="refreshProfile()">
+                                <i class="fas fa-sync-alt"></i>
+                                Refresh Profile
+                            </button>
+                            <button class="action-btn secondary" onclick="checkTokenStatus()">
+                                <i class="fas fa-check-circle"></i>
+                                Check Token Status
+                            </button>
+                            <button class="action-btn info" onclick="showTokenInfo()">
+                                <i class="fas fa-info-circle"></i>
+                                Token Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logs-section">
+                    <div class="logs-card">
+                        <h3><i class="fas fa-list"></i> Activity Logs</h3>
+                        <div class="logs-container" id="logsContainer">
+                            <div class="log-entry">
+                                <span class="timestamp">Initializing...</span>
+                                <span class="message">Dashboard loaded</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html> 
